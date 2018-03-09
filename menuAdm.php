@@ -4,7 +4,10 @@
 		<title>Bicicletaria</title>
 		<meta http-equiv="Content-Type" content="text/html" charset="UTF-8" />
 		<link rel="stylesheet" type="text/css" href="stylesheet.css" />
-		
+		<?php
+			$nroTipoPg = 1;
+			include "validaSessao.php";
+		?>
 	</head>
 	<body>
 		<header>
@@ -73,7 +76,7 @@
 				
 				<hr>
 				
-				<a href="index.html">
+				<a href="logOut.php">
 					<input class="botaoTop" type="button" value="Logout" name="logout" align="center">
 				</a>
 				

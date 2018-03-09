@@ -24,6 +24,7 @@
 			if($qtd == 1){
 				if(md5($senha_login) == $senha_compare){
 					session_start();
+					$_SESSION['email']	= $email_compare;
 					$_SESSION['perfil'] = $nroPerfil;
 					
 					if ($nroPerfil == 1){
@@ -48,34 +49,6 @@
 			} else {
 				$mensagem = "E-mail ou senha incorretos!";
 			}
-			
-			
-			var_dump($contatos);
-			
-			
-			$email_compare = "";
-			$senha_compare = "";
-			
-			
-			/*if ($email_login == $email_compare && md5($senha_login) == $senha_compare){
-				if ($nroPerfil == 1){
-					header("Location: menuAdm.php");
-				}
-				
-				if ($nroPerfil == 2){
-					header("Location: menuVendedor.php");
-				}
-				
-				if ($nroPerfil == 3){
-					header("Location: menuTecnico.php");
-				}
-				
-				if ($nroPerfil == 4){
-					header("Location: menuCliente.php");
-				}
-			} else {
-				$mensagem = "E-mail ou senha incorretos!";
-			}*/
 		?>
 	</head>
 	<body>
