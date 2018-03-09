@@ -5,7 +5,7 @@
 			header("Location: acessoNaoAutorizado.php");
 		}
 	} else {
-		header("Location: index.html");
+		header("Location: acessoNaoAutorizado.php");
 	}
 
 ?>
