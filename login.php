@@ -69,7 +69,7 @@
 					<hr>
 					
 					<p>
-						<a href="index.html">
+						<a href="index.php">
 							<input type="button" value="Retornar" name="retorno">
 						</a>
 					</p>

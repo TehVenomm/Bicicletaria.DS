@@ -22,7 +22,7 @@
 					$contatos -> execute(array($id, $endereco_email,$senha_criptografada, $tipoConta));
 					$contatos = NULL;
 					
-					header("location:index.html");
+					header("location:index.php");
 					
 				}
 		?>
@@ -34,7 +34,7 @@
 			<hr>
 		</header>
 		
-			<a href="index.html">
+			<a href="index.php">
 				<input class="botaoTop" type="button" value="Menu Principal" name="index" align="center">
 			</a>
 			<div class="cadastro">
