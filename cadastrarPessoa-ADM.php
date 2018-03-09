@@ -13,15 +13,9 @@
 					
 					
 					include "conexao.php";
-					$sql = "SET @id = (SELECT idUsuario
-										FROM usuario 
-										WHERE email = '$endereco_email');
-							INSERT INTO pessoa(nome, 
-											   telefone, 
-											   idUsuario_Pessoa) 
-							VALUES('$nome', 
-									'$telefone', 
-									@id);";
+					$sql = "SET @id = (SELECT idUsuario	FROM usuario WHERE email = '$endereco_email');
+							INSERT INTO pessoa(nome, telefone, idUsuario_Pessoa) 
+							VALUES('$nome', '$telefone', @id);";
 					$contatos = $conex -> prepare($sql);
 					$contatos -> execute();
 					$contatos = NULL;
