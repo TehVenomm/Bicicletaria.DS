@@ -9,32 +9,12 @@
 	<body>
 		<header>
 			<hr>
-			<h2><center>Projeto Bicicletaria - <?php echo "Painel ADM"; ?> - Gabriel Braz</center></h2>
+			<h2><center>Visualizar Pessoas Cadastradas - Projeto Bicicletaria</center></h2>
 			<hr>
 		</header>
 		<nav>
-			<a href="cadastroContas-ADM.php">
-				<input type="button" value="Cadastrar Contas"/>
-			</a>
-			
-			<a href="cadastrarPessoa-ADM.php">
-				<input type="button" value="Cadastrar Pessoas"/>
-			</a>
-			
-			<a href="listarContasClt-ADM.php">
-				<input type="button" value="Listar Contas Cliente"/>
-			</a>
-			
-			<a href="editarContas-ADM.php">
-				<input type="button" value="Editar Contas"/>
-			</a>
-			
-			<a href="listarContasTec-ADM.php">
-				<input type="button" value="Listar Contas Técnico"/>
-			</a>
-			
-			<a href="listarContasVndr-ADM.php">
-				<input type="button" value="Listar Contas Vendedor"/>
+			<a href="menuADM.php">
+				<input class="botaoTop" type="button" value="Menu Principal" name="index" align="center">
 			</a>
 		</nav>
 		

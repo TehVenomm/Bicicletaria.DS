@@ -12,7 +12,7 @@
 	<body>
 		<header>
 			<hr>
-			<h2><center>Projeto Bicicletaria - <?php echo "Painel ADM"; ?> - Gabriel Braz</center></h2>
+			<h2><center>Projeto Bicicletaria - Painel ADM - Gabriel Braz</center></h2>
 			<hr>
 		</header>
 		<nav>
@@ -44,34 +44,19 @@
 				<input type="button" value="Listar Contas Vendedor"/>
 			</a>
 		</nav>
-
-		<div>
+		<div id="divCorpoIndex">
 			<fieldset>
 				<legend>
 					<p>Painel</p>
 				</legend>
 				
-					<table border="0" style ="margin : 0 auto">
-						<tr>
-							<th>
-								
-							</th>
-						</tr>
-						
-						<tr>
-							<th>
-								
-							</th>
-						</tr>
-						
-						<tr>
-							<th>
-								
-							</th>
-						</tr>
-						
-						
-					</table>
+				<table border="0" style ="margin : 0 auto">
+					<tr>
+						<th>
+							Menu administrativo, escolha uma opção acima.
+						</th>
+					</tr>
+				</table>
 				
 				
 				<hr>

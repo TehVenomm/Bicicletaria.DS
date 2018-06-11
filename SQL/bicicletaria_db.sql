@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.7.7
+-- version 4.8.0.1
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: 08-Mar-2018 às 06:43
--- Versão do servidor: 10.1.30-MariaDB
--- PHP Version: 7.2.2
+-- Generation Time: 12-Jun-2018 às 00:56
+-- Versão do servidor: 10.1.32-MariaDB
+-- PHP Version: 7.2.5
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -63,8 +63,7 @@ CREATE TABLE `pessoa` (
 --
 
 INSERT INTO `pessoa` (`idPessoa`, `nome`, `telefone`, `idUsuario_Pessoa`) VALUES
-(2, 'Cliente Numero Dois', '(99) 6666-6666', 3),
-(3, 'Gabriel Braz', '(41) 9999-6666', 1);
+(2, 'Cliente Numero Dois', '(99) 6666-6666', 3);
 
 -- --------------------------------------------------------
 
@@ -84,9 +83,9 @@ CREATE TABLE `usuario` (
 --
 
 INSERT INTO `usuario` (`idUsuario`, `email`, `senha`, `idListaPerfil_Usuario`) VALUES
-(1, 'gabrielbrazs@gmail.com', 'e10adc3949ba59abbe56e057f20f883e', 1),
 (3, 'cliente2@gmail.com', 'e10adc3949ba59abbe56e057f20f883e', 4),
-(4, 'tecnico1@gmail.com', '6c44e5cd17f0019c64b042e4a745412a', 3);
+(4, 'tecnico1@gmail.com', '6c44e5cd17f0019c64b042e4a745412a', 3),
+(5, 'admin@admin.com', '21232f297a57a5a743894a0e4a801fc3', 1);
 
 --
 -- Indexes for dumped tables
@@ -132,7 +131,7 @@ ALTER TABLE `pessoa`
 -- AUTO_INCREMENT for table `usuario`
 --
 ALTER TABLE `usuario`
-  MODIFY `idUsuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `idUsuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- Constraints for dumped tables
@@ -142,13 +141,13 @@ ALTER TABLE `usuario`
 -- Limitadores para a tabela `pessoa`
 --
 ALTER TABLE `pessoa`
-  ADD CONSTRAINT `idUsuario_Pessoa` FOREIGN KEY (`idUsuario_Pessoa`) REFERENCES `usuario` (`idUsuario`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+  ADD CONSTRAINT `idUsuario_Pessoa` FOREIGN KEY (`idUsuario_Pessoa`) REFERENCES `usuario` (`idUsuario`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Limitadores para a tabela `usuario`
 --
 ALTER TABLE `usuario`
-  ADD CONSTRAINT `idListaPerfil_Usuario` FOREIGN KEY (`idListaPerfil_Usuario`) REFERENCES `listaperfil` (`idListaPerfil`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+  ADD CONSTRAINT `idListaPerfil_Usuario` FOREIGN KEY (`idListaPerfil_Usuario`) REFERENCES `listaperfil` (`idListaPerfil`) ON DELETE CASCADE ON UPDATE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

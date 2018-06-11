@@ -15,28 +15,37 @@
 					
 					$senha_criptografada = md5($senha_plain);
 					
-					
 					include "conexao.php";
-					$sql = "INSERT INTO usuario VALUES(?, ?, ?, ?)";
+					$sql = "SELECT * FROM usuario WHERE email = ?";
 					$contatos = $conex -> prepare($sql);
-					$contatos -> execute(array($id, $endereco_email,$senha_criptografada, $tipoConta));
-					$contatos = NULL;
+					$contatos -> execute(array($endereco_email,));
+					$qtd = $contatos -> rowCount();
 					
-					header("location:menuAdm.php");
-					
+					if ($qtd == 0){
+
+						$sql = "INSERT INTO usuario VALUES(?, ?, ?, ?)";
+						$contatos = $conex -> prepare($sql);
+						$contatos -> execute(array($id, $endereco_email,$senha_criptografada, $tipoConta));
+						$contatos = NULL;
+						
+						header("location:menuAdm.php");
+					} else {
+						echo "<script> alert('E-mail já cadastrado!'); </script>";
+					}
 				}
 		?>
 	</head>
 	<body>
 		<header>
 			<hr>
-			<h2><center>Projeto Bicicletaria - Gabriel Braz</center></h2>
+			<h2><center>Cadastro Conta - Projeto Bicicletaria</center></h2>
 			<hr>
 		</header>
-		
+		<div>
 			<a href="menuADM.php">
 				<input class="botaoTop" type="button" value="Menu Principal" name="index" align="center">
 			</a>
+			</div>
 			<div class="cadastro">
 				<fieldset>
 					<legend>

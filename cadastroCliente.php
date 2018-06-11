@@ -14,15 +14,24 @@
 					$tipoConta = 4;
 					
 					$senha_criptografada = md5($senha_plain);
-					
-					
+				
 					include "conexao.php";
-					$sql = "INSERT INTO usuario VALUES(?, ?, ?, ?)";
+					$sql = "SELECT * FROM usuario WHERE email = ?";
 					$contatos = $conex -> prepare($sql);
-					$contatos -> execute(array($id, $endereco_email,$senha_criptografada, $tipoConta));
-					$contatos = NULL;
+					$contatos -> execute(array($endereco_email,));
+					$qtd = $contatos -> rowCount();
 					
-					header("location:index.php");
+					if ($qtd == 0){
+						$sql = "INSERT INTO usuario VALUES(?, ?, ?, ?)";
+						$contatos = $conex -> prepare($sql);
+						$contatos -> execute(array($id, $endereco_email,$senha_criptografada, $tipoConta));
+						$contatos = NULL;
+						
+						header("location:index.php");
+					} else {
+						echo "<script> alert('E-mail já cadastrado!'); </script>";
+					}
+					
 					
 				}
 		?>
@@ -30,7 +39,7 @@
 	<body>
 		<header>
 			<hr>
-			<h2><center>Projeto Bicicletaria - Gabriel Braz</center></h2>
+			<h2><center>Cadastro Cliente - Projeto Bicicletaria</center></h2>
 			<hr>
 		</header>
 		

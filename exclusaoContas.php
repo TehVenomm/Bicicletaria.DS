@@ -20,7 +20,7 @@
 	<body>
 		<header>
 			<hr>
-			<h2><center>Projeto Bicicletaria - Gabriel Braz</center></h2>
+			<h2><center>Exclusão Contas - Projeto Bicicletaria</center></h2>
 			<hr>
 		</header>
 		
