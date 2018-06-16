@@ -56,6 +56,18 @@
 			
 			
 		</div>
-
+		<div>
+			<fieldset>
+				<legend>
+					Gerar Relatórios:
+				</legend>
+				<a href="relatorio1.php">
+					<input class="botaoTop" type="button" value="Relatório A" name="irRelatorioUm" align="center">
+				</a>
+				<a href="relatorio2.php">
+					<input class="botaoTop" type="button" value="Relatório B" name="irRelatorioDois" align="center">
+				</a>
+			</fieldset>
+		</div>
 	</body>
 </html>
