@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.0.1
+-- version 4.8.1
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: 12-Jun-2018 às 00:56
--- Versão do servidor: 10.1.32-MariaDB
--- PHP Version: 7.2.5
+-- Generation Time: 16-Jun-2018 às 02:52
+-- Versão do servidor: 10.1.33-MariaDB
+-- PHP Version: 7.2.6
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -63,7 +63,9 @@ CREATE TABLE `pessoa` (
 --
 
 INSERT INTO `pessoa` (`idPessoa`, `nome`, `telefone`, `idUsuario_Pessoa`) VALUES
-(2, 'Cliente Numero Dois', '(99) 6666-6666', 3);
+(2, 'Cliente Numero Dois', '(99) 6666-6666', 3),
+(4, 'João Pessoa', '(41) 9999-6666', 14),
+(5, 'Ana Claudia', '(41) 9966-3366', 16);
 
 -- --------------------------------------------------------
 
@@ -85,7 +87,16 @@ CREATE TABLE `usuario` (
 INSERT INTO `usuario` (`idUsuario`, `email`, `senha`, `idListaPerfil_Usuario`) VALUES
 (3, 'cliente2@gmail.com', 'e10adc3949ba59abbe56e057f20f883e', 4),
 (4, 'tecnico1@gmail.com', '6c44e5cd17f0019c64b042e4a745412a', 3),
-(5, 'admin@admin.com', '21232f297a57a5a743894a0e4a801fc3', 1);
+(5, 'admin@admin.com', '21232f297a57a5a743894a0e4a801fc3', 1),
+(8, 'clientetres@gmail.com', 'e8d95a51f3af4a3b134bf6bb680a213a', 4),
+(9, 'clientequatro@gmail.com', 'e8d95a51f3af4a3b134bf6bb680a213a', 4),
+(10, 'clientecinco@gmail.com', 'e8d95a51f3af4a3b134bf6bb680a213a', 4),
+(11, 'clienteseis@gmail.com', 'e8d95a51f3af4a3b134bf6bb680a213a', 4),
+(12, 'clientesete@gmail.com', 'e8d95a51f3af4a3b134bf6bb680a213a', 4),
+(13, 'tecnico2@gmail.com', '6c44e5cd17f0019c64b042e4a745412a', 3),
+(14, 'vendedor1@gmail.com', '6c44e5cd17f0019c64b042e4a745412a', 2),
+(15, 'tecnico3@gmail.com', '6c44e5cd17f0019c64b042e4a745412a', 3),
+(16, 'vendedor2@gmail.com', '6c44e5cd17f0019c64b042e4a745412a', 2);
 
 --
 -- Indexes for dumped tables
@@ -125,13 +136,13 @@ ALTER TABLE `listaperfil`
 -- AUTO_INCREMENT for table `pessoa`
 --
 ALTER TABLE `pessoa`
-  MODIFY `idPessoa` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `idPessoa` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `usuario`
 --
 ALTER TABLE `usuario`
-  MODIFY `idUsuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `idUsuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 
 --
 -- Constraints for dumped tables
